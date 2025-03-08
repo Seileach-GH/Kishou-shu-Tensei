@@ -53,6 +53,42 @@ a:visited{
 	border-color: #FFFFFF;
 }
 
+.read{
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 50px;
+	padding-top: 0;
+	border: none;
+	border-left: solid;
+	border-right: solid;
+	border-color: #FFFFFF;
+	display: flow-root;
+}
+
+.solid{
+	margin-bottom: 50px;
+}
+
+ul{
+	padding: 0;
+}
+
+.chapter{
+	text-align: left;
+	list-style-type: none;
+	float: left;
+	display: inline;
+	margin-left: 0px;
+	padding: 0px;
+	margin-right: 1%;
+	margin-left: 1%;
+	margin-bottom: 20px;
+	padding: 10px;
+	display: block; 
+	width: 46%;
+}
+
 .footer{
 	padding: 20px;
 	text-align: center;
@@ -100,5 +136,13 @@ a:visited{
 		margin-left: auto;
 		margin-right: auto;
 		width: 70%;
+	}
+}
+
+
+
+@media only screen and (max-width: 1120px) {
+	.chapter{
+		width: 100%;
 	}
 }
