@@ -1,18 +1,28 @@
 body {
   background-color: #1e1e1e;
   color: white;
+  font-family: Arial;
 }
 
 h1 {
 	margin-top: 0px;
+	font-family: Georgia;
+	font-weight: bold;
+	margin-bottom: 5px;
 }
 
-h2 {
-	margin-top: 0px;
+h3 {
+	margin-top: 5px;
+	font-family: Georgia;
+	font-weight: bold;
+}
+
+h4 {
+	font-family: Georgia;
+	font-weight: bold;
 }
 
 .header{
-	max-width: 100%;
 	height: 100px;
 	padding: 20px;
 	border: solid;
@@ -27,4 +37,19 @@ h2 {
 	padding: 50px;
 	border: solid;
 	border-color: #FFFFFF;
+}
+
+@media only screen and (max-width: 700px) {
+	h1 {
+		font-size: 24px;
+		}
+	h3 {
+		font-size: 18px;
+		}
+	h4 {
+		font-size: 14px;
+		}
+	.header{
+		height: 120px;
+		}
 }
