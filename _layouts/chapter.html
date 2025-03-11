@@ -23,11 +23,7 @@
     <p><i>Posted on {{ page.date | date: "%B %d, %Y" }}</i></p>
     <hr>
     {{ content }}
-	<div class="post-navigation">
-  {% if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}" class="prev-post">← Previous Chapter</a>
-  {% endif %}
-  
+<div class="post-navigation-container">
   <div class="select-container">
     <select id="postDropdown" class="chapter-select">
       <option value="">Select a Chapter</option>
@@ -38,10 +34,15 @@
       {% endfor %}
     </select>
   </div>
-  
-  {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}" class="next-post">Next Chapter →</a>
-  {% endif %}
+
+  <div class="post-navigation {% if page.previous %}both-links{% else %}only-next{% endif %}">
+    {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="prev-post">← Previous Chapter</a>
+    {% endif %}
+    {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="next-post">Next Chapter →</a>
+    {% endif %}
+  </div>
 </div>
   </div>
   <!-- Footer Section -->
