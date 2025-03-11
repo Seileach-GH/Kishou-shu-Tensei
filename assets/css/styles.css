@@ -1,5 +1,11 @@
 body {
-  background-color: #1e1e1e;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/background.jpg");
+  background-size: cover; /* Cover the entire screen */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  background-attachment: fixed; /* Keep it fixed while scrolling */
   color: white;
   font-family: Arial;
 }
@@ -20,7 +26,9 @@ h3 {
 h4 {
 	font-family: Georgia;
 	font-weight: bold;
+	margin-bottom: 10px;
 }
+
 
 a:link{
 	color: #5999ff;
@@ -30,35 +38,51 @@ a:visited{
 	color: #abcbff;
 }
 
+.header a{
+	border-color: #FFFFFF;
+	color: white;
+	text-shadow:
+    1px 1px 2px black,  /* Top-left shadow */
+    -1px -1px 2px black, /* Bottom-right shadow */
+    1px -1px 2px black,  /* Top-right shadow */
+    -1px 1px 2px black;  /* Bottom-left shadow */
+	text-decoration: none;
+}
+
 .header{
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	background-color: rgba(61, 49, 31);
 	padding: 20px;
 	text-align: center;
-	border-bottom: solid;
-	border-color: #FFFFFF;
+	color: white;
+	text-shadow:
+    1px 1px 2px black,  /* Top-left shadow */
+    -1px -1px 2px black, /* Bottom-right shadow */
+    1px -1px 2px black,  /* Top-right shadow */
+    -1px 1px 2px black;  /* Bottom-left shadow */
+	text-decoration: none;
 }
 
 .main{
+	background-color: rgba(30, 30, 30, 0.9);
 	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 50px;
 	padding-top: 40px;
 	padding-bottom: 20px;
-	border-left: solid;
-	border-right: solid;
-	border-color: #FFFFFF;
 }
 
 .read{
+	background-color: rgba(30, 30, 30, 0.9);
 	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 50px;
 	padding-top: 0;
 	border: none;
-	border-left: solid;
-	border-right: solid;
-	border-color: #FFFFFF;
 	display: flow-root;
 }
 
@@ -88,8 +112,6 @@ ul{
 .footer{
 	padding: 20px;
 	text-align: center;
-	border-top: solid;
-	border-color: #FFFFFF;
 }
 
 .intro{
@@ -173,9 +195,7 @@ ul{
 		}
 	h4 {
 		font-size: 14px;
-		}
-	.header{
-		height: 120px;
+		margin-bottom: 0px;
 		}
 	.main{
 		padding-left: 20px;
