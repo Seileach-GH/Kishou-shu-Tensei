@@ -3,32 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kishou-shu Tensei</title>
-  
-  <!-- Link to CSS -->
+  <title>{{ page.title }} - Kishou-shu Tensei</title>
+  <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 </head>
 
 <body>
 
   <!-- Header Section -->
-  <div class="header">
+  <div class="header"><a href="{{ '/' | relative_url }}">
     <h1>Kishou-shu Tensei</h1> 
     <h3>~Hito ga Kishouna Sekai de Cafe o Keiei Shite Imasu~</h3>
     <h4>Rare Species Reincarnation ~Running a Café in a World Where Humans Are Rare~</h4>
-  </div>
+  </a></div>
 
   <!-- Main Content -->
   <div class="main">
-
+    <h2>{{ page.title }}</h2>
+    <p><i>Posted on {{ page.date | date: "%B %d, %Y" }}</i></p>
+    <hr>
+    {{ content }}
+	<div class="post-navigation">
+  {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="prev-post">← Previous Chapter</a>
+  {% endif %}
+  
+  <div class="select-container">
+    <select id="postDropdown" class="chapter-select">
+      <option value="">Select a Chapter</option>
+      {% for post in site.posts reversed %}
+        <option value="{{ post.url | relative_url }}" {% if post.url == page.url %}selected{% endif %}>
+          {{ post.title }}
+        </option>
+      {% endfor %}
+    </select>
   </div>
-
-
-
+  
+  {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="next-post">Next Chapter →</a>
+  {% endif %}
+</div>
+  </div>
   <!-- Footer Section -->
   <div class="footer">
     <!-- You can add footer content here -->
   </div>
+
+<script>
+    document.getElementById("postDropdown").addEventListener("change", function() {
+      var url = this.value;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
+
 
 </body>
 </html>
