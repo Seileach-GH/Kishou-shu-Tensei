@@ -36,7 +36,7 @@
         <p>Reborn into such a world, one man receives a dying wish from his grandfather: to ensure that the human bloodline does not perish. Using his meager inheritance to purchase citizenship, he sets out on a single, daunting path—creating a peaceful harem to contribute, however slightly, to reversing the population decline. To that end, he opens a high-end café, choosing to build connections with many different species.</p>
         <p>Thus begins a conspiracy-laced romantic comedy filled with non-human heroines.</p>
         <br>
-        <p>Work In Progress - 2025/03/10</p>
+        <p>Work In Progress - 2025/03/11</p>
       </div>
     </div>
   </div>
@@ -44,11 +44,20 @@
   <!-- Blog List Section (replaces the chapters section) -->
 <div class="read">
   <hr class="solid">
-  <ul>
-    {% for post in site.posts %}
-      <li class="chapter">
+      <div class="index-select-container">
+		<select id="indexChapterDropdown" class="index-chapter-select">
+        <option value="">Select a Chapter</option>
+        {% for post in site.posts reversed %}
+            <option value="{{ post.url | relative_url }}">{{ post.title }}</option>
+        {% endfor %}
+		</select>
+		<button id="toggleOrderBtn" class="toggle-order">Reverse Order</button>
+	  </div>
+  <ul id="chapterList" class="chapter-list">
+    {% for post in site.posts reversed %}
+    <li class="chapter">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </li>
+    </li>
     {% endfor %}
   </ul>
 </div>
@@ -57,6 +66,39 @@
   <div class="footer">
     <!-- You can add footer content here -->
   </div>
+  
+<script>
+
+document.getElementById('indexChapterDropdown').addEventListener('change', function() {
+    if (this.value) {
+        window.location.href = this.value;
+    }
+});
+
+  document.addEventListener("DOMContentLoaded", function() {
+      const toggleButton = document.getElementById("toggleOrderBtn");
+      const chapterList = document.getElementById("chapterList");
+
+      // Ensure the newest chapter is at the top initially
+      let items = Array.from(chapterList.children);
+      items.reverse().forEach(item => chapterList.appendChild(item));
+
+      // Event listener for button click
+      toggleButton.addEventListener("click", function() {
+          console.log("Button clicked! Reversing order...");
+
+          items = Array.from(chapterList.children); // Get all children (chapter items)
+          console.log("Original order:", items.map(item => item.textContent));
+
+          // Clear and reverse list
+          chapterList.innerHTML = "";
+          items.reverse().forEach(item => chapterList.appendChild(item)); // Append reversed items
+
+          console.log("Reversed order:", items.map(item => item.textContent));
+      });
+  });
+
+</script>
 
 </body>
 </html>

@@ -107,6 +107,9 @@ ul{
 	padding: 10px;
 	display: block; 
 	width: 46%;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .footer{
@@ -184,6 +187,41 @@ ul{
 .chapter-select option {
   background-color: #222;
   color: white;
+}
+
+.index-select-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns to the left */
+	margin-left: 20px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensures it spans the full width */
+}
+
+.index-chapter-select {
+    padding: 8px;
+    font-size: 16px;
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.toggle-order {
+    margin-left: 10px;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-order:hover {
+    background-color: #666;
 }
 
 @media only screen and (max-width: 700px) {
