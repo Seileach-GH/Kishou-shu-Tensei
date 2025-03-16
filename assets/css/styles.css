@@ -150,12 +150,8 @@ ul{
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   margin-top: 10px;
-}
-
-.post-navigation.only-next {
-  justify-content: center;
 }
 
 /* Keep previous and next links side by side on large screens */
@@ -167,9 +163,15 @@ ul{
 }
 
 /* Align previous and next links */
-.prev-post, .next-post {
+.prev-post {
   width: 48%;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.next-post {
+  width: 48%;
+  text-align: right;
   margin-bottom: 10px;
 }
 
@@ -245,9 +247,9 @@ ul{
 		margin-right: auto;
 		width: 70%;
 	}
-	.post-navigation {
-    flex-direction: column;
-    align-items: center;
+
+  .post-navigation {
+	  max-width: 400px;
   }
 
   .select-container {
@@ -264,9 +266,14 @@ ul{
     max-width: 400px; /* Ensures they don’t stretch too much */
   }
 
-  .prev-post, .next-post {
-    width: 48%;
-    text-align: center;
+  .prev-post {
+    text-align: left;
+	margin-left: 20px;
+  }
+  
+  .next-post {
+    text-align: right;
+	margin-right: 20px;
   }
   
   .chapter-select {
