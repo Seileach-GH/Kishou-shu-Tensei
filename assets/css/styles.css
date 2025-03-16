@@ -29,6 +29,9 @@ h4 {
 	margin-bottom: 10px;
 }
 
+.text{
+	font-size: 16px;
+}
 
 a:link{
 	color: #5999ff;
@@ -73,6 +76,11 @@ a:visited{
 	padding: 50px;
 	padding-top: 40px;
 	padding-bottom: 20px;
+}
+
+.main p {
+    line-height: 1.8;  /* Adjusts line spacing within paragraphs */
+    margin-bottom: 20px;  /* Adds space between paragraphs */
 }
 
 .read{
